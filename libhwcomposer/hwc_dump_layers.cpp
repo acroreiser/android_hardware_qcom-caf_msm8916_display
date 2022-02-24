@@ -33,7 +33,7 @@
 #define LOG_NDEBUG 0
 #include <hwc_utils.h>
 #include <hwc_dump_layers.h>
-#include <cutils/log.h>
+#include <log/log.h>
 #include <sys/stat.h>
 #include <comptype.h>
 #ifdef QTI_BSP
@@ -41,8 +41,8 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wfloat-conversion"
-#include <SkBitmap.h>
-#include <SkImageEncoder.h>
+/* #include <SkBitmap.h>
+#include <SkImageEncoder.h> */
 #pragma GCC diagnostic pop
 #endif
 #ifdef STDC_FORMAT_MACROS
@@ -315,7 +315,7 @@ void HwcDebug::dumpLayer(size_t layerIndex, hwc_layer_1_t hwLayers[])
     }
 
     getHalPixelFormatStr(hnd->format, pixFormatStr, sizeof(pixFormatStr));
-#ifdef QTI_BSP
+/*#ifdef QTI_BSP
     if (needDumpPng && hnd->base) {
         bool bResult = false;
         char dumpFilename[PATH_MAX];
@@ -358,7 +358,7 @@ void HwcDebug::dumpLayer(size_t layerIndex, hwc_layer_1_t hwLayers[])
                 mDisplayName, layerIndex, dumpLogStrPng, pixFormatStr);
         }
     }
-#endif
+#endif */
     if (needDumpRaw && hnd->base) {
         char dumpFilename[PATH_MAX];
         bool bResult = false;
